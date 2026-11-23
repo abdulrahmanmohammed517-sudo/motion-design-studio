@@ -37,7 +37,7 @@ export const BoxText: React.FC<{ frame: number; fontFamily: string }> = ({
           translate: `0 ${interpolate(swapProgress, [0, 1], [0, -20])}px`,
         }}
       >
-        48 HOUR RESET
+        ACCESS UNLOCKED
       </div>
       <div
         style={{

@@ -7,7 +7,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import { loadFont as loadAnton } from "@remotion/google-fonts/Anton";
-import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
+import { loadFont as loadMontserrat } from "@remotion/google-fonts/Montserrat";
 import {
   BOX_Y_OFFSET,
   HEADLINE_GAP,
@@ -24,7 +24,7 @@ const { fontFamily: antonFontFamily } = loadAnton("normal", {
   weights: ["400"],
   subsets: ["latin"],
 });
-const { fontFamily: interFontFamily } = loadInter("normal", {
+const { fontFamily: montserratFontFamily } = loadMontserrat("normal", {
   weights: ["600"],
   subsets: ["latin"],
 });
@@ -67,7 +67,7 @@ export const UnlockOverlay: React.FC = () => {
           opacity: groupOpacity,
         }}
       >
-        <GlassBox frame={frame} fps={fps} fontFamily={interFontFamily} />
+        <GlassBox frame={frame} fps={fps} fontFamily={montserratFontFamily} />
 
         <div style={{ position: "relative", marginTop: HEADLINE_GAP }}>
           <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
