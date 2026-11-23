@@ -1,5 +1,5 @@
 import React from "react";
-import { BOX_HEIGHT, BOX_RADIUS, BOX_WIDTH } from "./timing";
+import { BOX_BORDER, BOX_FILL, BOX_HEIGHT, BOX_RADIUS, BOX_WIDTH } from "./timing";
 import { getBoxPopTransform } from "./boxTransform";
 import { Padlock } from "./Padlock";
 import { CheckBurst } from "./CheckBurst";
@@ -19,8 +19,8 @@ export const GlassBox: React.FC<{
         width: BOX_WIDTH,
         height: BOX_HEIGHT,
         borderRadius: BOX_RADIUS,
-        backgroundColor: "rgba(0,0,0,0.38)",
-        border: "1px solid rgba(255,255,255,0.15)",
+        backgroundColor: BOX_FILL,
+        border: BOX_BORDER,
         scale,
         opacity,
       }}

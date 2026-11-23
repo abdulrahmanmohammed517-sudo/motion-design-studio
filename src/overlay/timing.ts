@@ -12,6 +12,8 @@ export const DURATION_IN_FRAMES = 125; // 5s @ 25fps
 export const BOX_WIDTH = 900;
 export const BOX_HEIGHT = 240;
 export const BOX_RADIUS = 32;
+export const BOX_FILL = "rgba(0,0,0,0.38)";
+export const BOX_BORDER = "1.5px solid rgba(255,255,255,0.65)";
 export const BOX_Y_OFFSET = 70; // px below true vertical centre
 
 export const BOX_POP_START = 0;
@@ -49,7 +51,12 @@ export const CONFETTI_START = 55;
 export const CONFETTI_DURATION = 40; // frames 55 -> 95
 export const CONFETTI_COUNT = 40;
 
-// --- Out (shared by both compositions) ---
+// --- Out (shared by UnlockOverlay and UnlockMatte, both 5s) ---
 export const OUT_START = 110;
 export const OUT_END = 125;
 export const OUT_DRIFT = 20; // px, downward drift
+
+// --- UnlockBoxPlate: its own duration, independent of the 5s VSL moment ---
+export const BOX_PLATE_DURATION_IN_FRAMES = 250; // 10s @ 25fps
+export const BOX_PLATE_OUT_START = 235;
+export const BOX_PLATE_OUT_END = 250;
