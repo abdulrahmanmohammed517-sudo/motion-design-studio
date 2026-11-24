@@ -42,6 +42,24 @@ import { YearsOfErrors } from "./yearsoferrors/YearsOfErrors";
 import { LiveWithExpert } from "./livewithexpert/LiveWithExpert";
 import { AcceleratorReveal } from "./acceleratorreveal/AcceleratorReveal";
 import { AcceleratorRevealAlpha } from "./acceleratorreveal/AcceleratorRevealAlpha";
+import { TwoWeeksLive } from "./twoweekslive/TwoWeeksLive";
+import { InsideMyProcess } from "./insidemyprocess/InsideMyProcess";
+import { SixSessions } from "./sixsessions/SixSessions";
+import { WhatWeCover } from "./whatwecover/WhatWeCover";
+import { MakeTheMove } from "./makethemove/MakeTheMove";
+import { NotAlone } from "./notalone/NotAlone";
+import { ExpertTopics } from "./experttopics/ExpertTopics";
+import { WalkOutWith } from "./walkoutwith/WalkOutWith";
+import { LifetimeAccess } from "./lifetimeaccess/LifetimeAccess";
+import { PropertyCard } from "./propertycard/PropertyCard";
+import { EverythingYouGet } from "./everythingyouget/EverythingYouGet";
+import { PriceReveal } from "./pricereveal/PriceReveal";
+import { PersonalStrategic } from "./personalstrategic/PersonalStrategic";
+import { StartDate } from "./startdate/StartDate";
+import { StartDateGuide } from "./startdate/StartDateGuide";
+import { ReadyToLeap } from "./readytoleap/ReadyToLeap";
+import { ClickButtonBelow } from "./clickbuttonbelow/ClickButtonBelow";
+import { Disclaimer } from "./disclaimer/Disclaimer";
 import {
   BOX_PLATE_DURATION_IN_FRAMES,
   DURATION_IN_FRAMES,
@@ -103,6 +121,23 @@ import { DURATION_IN_FRAMES as OPENOPPORTUNITIES_DURATION_IN_FRAMES } from "./op
 import { DURATION_IN_FRAMES as YEARSOFERRORS_DURATION_IN_FRAMES } from "./yearsoferrors/timing";
 import { DURATION_IN_FRAMES as LIVEWITHEXPERT_DURATION_IN_FRAMES } from "./livewithexpert/timing";
 import { DURATION_IN_FRAMES as ACCELERATORREVEAL_DURATION_IN_FRAMES } from "./acceleratorreveal/timing";
+import { DURATION_IN_FRAMES as TWOWEEKSLIVE_DURATION_IN_FRAMES } from "./twoweekslive/timing";
+import { DURATION_IN_FRAMES as INSIDEMYPROCESS_DURATION_IN_FRAMES } from "./insidemyprocess/timing";
+import { DURATION_IN_FRAMES as SIXSESSIONS_DURATION_IN_FRAMES } from "./sixsessions/timing";
+import { DURATION_IN_FRAMES as WHATWECOVER_DURATION_IN_FRAMES } from "./whatwecover/timing";
+import { DURATION_IN_FRAMES as MAKETHEMOVE_DURATION_IN_FRAMES } from "./makethemove/timing";
+import { DURATION_IN_FRAMES as NOTALONE_DURATION_IN_FRAMES } from "./notalone/timing";
+import { DURATION_IN_FRAMES as EXPERTTOPICS_DURATION_IN_FRAMES } from "./experttopics/timing";
+import { DURATION_IN_FRAMES as WALKOUTWITH_DURATION_IN_FRAMES } from "./walkoutwith/timing";
+import { DURATION_IN_FRAMES as LIFETIMEACCESS_DURATION_IN_FRAMES } from "./lifetimeaccess/timing";
+import { DURATION_IN_FRAMES as PROPERTYCARD_DURATION_IN_FRAMES } from "./propertycard/timing";
+import { DURATION_IN_FRAMES as EVERYTHINGYOUGET_DURATION_IN_FRAMES } from "./everythingyouget/timing";
+import { DURATION_IN_FRAMES as PRICEREVEAL_DURATION_IN_FRAMES } from "./pricereveal/timing";
+import { DURATION_IN_FRAMES as PERSONALSTRATEGIC_DURATION_IN_FRAMES } from "./personalstrategic/timing";
+import { DURATION_IN_FRAMES as STARTDATE_DURATION_IN_FRAMES } from "./startdate/timing";
+import { DURATION_IN_FRAMES as READYTOLEAP_DURATION_IN_FRAMES } from "./readytoleap/timing";
+import { DURATION_IN_FRAMES as CLICKBUTTONBELOW_DURATION_IN_FRAMES } from "./clickbuttonbelow/timing";
+import { DURATION_IN_FRAMES as DISCLAIMER_DURATION_IN_FRAMES } from "./disclaimer/timing";
 
 // Default export settings so both compositions render transparent
 // (ProRes 4444 + alpha) out of the box in Studio, matching the CLI render
@@ -542,6 +577,169 @@ export const RemotionRoot: React.FC = () => {
         height={HEIGHT}
         fps={FPS}
         durationInFrames={ACCELERATORREVEAL_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+
+      {/* --- section6 --- */}
+      <Composition
+        id="TwoWeeksLive"
+        component={TwoWeeksLive}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={TWOWEEKSLIVE_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="InsideMyProcess"
+        component={InsideMyProcess}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={INSIDEMYPROCESS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="SixSessions"
+        component={SixSessions}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={SIXSESSIONS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="WhatWeCover"
+        component={WhatWeCover}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={WHATWECOVER_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="MakeTheMove"
+        component={MakeTheMove}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={MAKETHEMOVE_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="NotAlone"
+        component={NotAlone}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={NOTALONE_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ExpertTopics"
+        component={ExpertTopics}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={EXPERTTOPICS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="WalkOutWith"
+        component={WalkOutWith}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={WALKOUTWITH_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="LifetimeAccess"
+        component={LifetimeAccess}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={LIFETIMEACCESS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="PropertyCard"
+        component={PropertyCard}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={PROPERTYCARD_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="EverythingYouGet"
+        component={EverythingYouGet}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={EVERYTHINGYOUGET_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="PriceReveal"
+        component={PriceReveal}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={PRICEREVEAL_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="PersonalStrategic"
+        component={PersonalStrategic}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={PERSONALSTRATEGIC_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="StartDate"
+        component={StartDate}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={STARTDATE_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="StartDateGuide"
+        component={StartDateGuide}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={STARTDATE_DURATION_IN_FRAMES}
+      />
+      <Composition
+        id="ReadyToLeap"
+        component={ReadyToLeap}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={READYTOLEAP_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ClickButtonBelow"
+        component={ClickButtonBelow}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={CLICKBUTTONBELOW_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="Disclaimer"
+        component={Disclaimer}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={DISCLAIMER_DURATION_IN_FRAMES}
         calculateMetadata={calculateMetadata}
       />
     </>
