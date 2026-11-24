@@ -41,3 +41,10 @@ export const OUT_DURATION = 15; // last 15 frames
 export const OUT_START = DURATION_IN_FRAMES - OUT_DURATION;
 export const OUT_END = DURATION_IN_FRAMES;
 export const OUT_DRIFT = 20;
+
+// --- mode: portfolio (all 5 steps light up gold in sequence) ---
+export const PORTFOLIO_DRAW_STAGGER = 2;
+export const PORTFOLIO_DRAW_DURATION = 7; // all 5 draw in within frames 0 -> 15
+export const PORTFOLIO_LIGHT_FRAMES = [20, 55, 90, 125, 160];
+export const PORTFOLIO_LIGHT_DURATION = 8;
+export const PORTFOLIO_LABELS = ["Property", "Stock market", "Pension", "Commercial property", "Angel investing"];

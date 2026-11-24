@@ -8,6 +8,11 @@ export const GLASS_RADIUS = 28;
 export const GLASS_FILL = "rgba(0,0,0,0.38)";
 export const GLASS_BORDER = "1px solid rgba(255,255,255,0.15)";
 
+// Darker card look used from the "section 3+" batches onward (fill 0.5 +
+// shadow). Earlier compositions keep GLASS_FILL/no-shadow untouched.
+export const CARD_FILL = "rgba(0,0,0,0.5)";
+export const CARD_SHADOW = "0 12px 36px rgba(0,0,0,0.3)";
+
 export const COLOR_WHITE = "#FFFFFF";
 export const COLOR_GREEN = "#22C55E";
 export const COLOR_RED = "#FF3B30";

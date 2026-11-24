@@ -1,26 +1,15 @@
 import { interpolate } from "remotion";
-import {
-  CARD_HEIGHT,
-  CARD_LEFT,
-  CARD_TOP,
-  CARD_WIDTH,
-  PILL_HEIGHT,
-  PILL_LEFT,
-  PILL_TOP,
-  PILL_WIDTH,
-  SHRINK_END,
-  SHRINK_START,
-} from "./timing";
+import { CARD_HEIGHT, CARD_LEFT, CARD_TOP, CARD_WIDTH, PILL_HEIGHT, PILL_LEFT, PILL_TOP, PILL_WIDTH } from "./timing";
 
 /** Card box (left/top/width/height): static at its centred size, then
- * shrinks and moves into the top-left tracker pill over SHRINK_START ->
- * SHRINK_END. */
-export const getCard02Box = (frame: number) => {
-  if (frame < SHRINK_START) {
+ * shrinks and moves into the top-left tracker pill over shrinkStart ->
+ * shrinkEnd. */
+export const getCard02Box = (frame: number, shrinkStart: number, shrinkEnd: number) => {
+  if (frame < shrinkStart) {
     return { left: CARD_LEFT, top: CARD_TOP, width: CARD_WIDTH, height: CARD_HEIGHT };
   }
 
-  const shrinkProgress = interpolate(frame, [SHRINK_START, SHRINK_END], [0, 1], {
+  const shrinkProgress = interpolate(frame, [shrinkStart, shrinkEnd], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -33,8 +22,8 @@ export const getCard02Box = (frame: number) => {
   return { left, top, width, height };
 };
 
-export const getShrinkProgress = (frame: number) =>
-  interpolate(frame, [SHRINK_START, SHRINK_END], [0, 1], {
+export const getShrinkProgress = (frame: number, shrinkStart: number, shrinkEnd: number) =>
+  interpolate(frame, [shrinkStart, shrinkEnd], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });

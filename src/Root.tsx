@@ -28,6 +28,14 @@ import { ScenarioCards } from "./scenariocards/ScenarioCards";
 import { RiskSlider } from "./riskslider/RiskSlider";
 import { MixDonut } from "./mixdonut/MixDonut";
 import { ThreeDonuts } from "./threedonuts/ThreeDonuts";
+import { ThreePillars } from "./threepillars/ThreePillars";
+import { SteadyChart } from "./steadychart/SteadyChart";
+import { FourWords } from "./fourwords/FourWords";
+import { StrikeReplace } from "./strikereplace/StrikeReplace";
+import { LowerThirdQuote } from "./lowerthirdquote/LowerThirdQuote";
+import { MissedMoney } from "./missedmoney/MissedMoney";
+import { IndecisionWord } from "./indecisionword/IndecisionWord";
+import { StaircasePortfolio } from "./staircaseportfolio/StaircasePortfolio";
 import {
   BOX_PLATE_DURATION_IN_FRAMES,
   DURATION_IN_FRAMES,
@@ -76,6 +84,14 @@ import { DURATION_IN_FRAMES as SCENARIOCARDS_DURATION_IN_FRAMES } from "./scenar
 import { DURATION_IN_FRAMES as RISKSLIDER_DURATION_IN_FRAMES } from "./riskslider/timing";
 import { DURATION_IN_FRAMES as MIXDONUT_DURATION_IN_FRAMES } from "./mixdonut/timing";
 import { DURATION_IN_FRAMES as THREEDONUTS_DURATION_IN_FRAMES } from "./threedonuts/timing";
+import { DURATION_IN_FRAMES as THREEPILLARS_DURATION_IN_FRAMES } from "./threepillars/timing";
+import { DURATION_IN_FRAMES as STEADYCHART_DURATION_IN_FRAMES } from "./steadychart/timing";
+import { DURATION_IN_FRAMES as FOURWORDS_DURATION_IN_FRAMES } from "./fourwords/timing";
+import { DURATION_IN_FRAMES as STRIKEREPLACE_DURATION_IN_FRAMES } from "./strikereplace/timing";
+import { DURATION_IN_FRAMES as LOWERTHIRDQUOTE_DURATION_IN_FRAMES } from "./lowerthirdquote/timing";
+import { DURATION_IN_FRAMES as MISSEDMONEY_DURATION_IN_FRAMES } from "./missedmoney/timing";
+import { DURATION_IN_FRAMES as INDECISIONWORD_DURATION_IN_FRAMES } from "./indecisionword/timing";
+import { DURATION_IN_FRAMES as STAIRCASEPORTFOLIO_DURATION_IN_FRAMES } from "./staircaseportfolio/timing";
 
 // Default export settings so both compositions render transparent
 // (ProRes 4444 + alpha) out of the box in Studio, matching the CLI render
@@ -354,6 +370,111 @@ export const RemotionRoot: React.FC = () => {
         height={HEIGHT}
         fps={FPS}
         durationInFrames={THREEDONUTS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+
+      {/* --- section4 --- */}
+      <Composition
+        id="DecisionThree"
+        component={DecisionTwo}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={75}
+        defaultProps={{
+          numberText: "03",
+          labelText: "THE AUTOPILOT",
+          pillText: "DECISION 3/3 · THE AUTOPILOT",
+          shrinkStart: 45,
+          shrinkEnd: 75,
+        }}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="DecisionTracker3"
+        component={DecisionTracker}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={625}
+        defaultProps={{
+          decisionNumber: 3,
+          label: "THE AUTOPILOT",
+          cardFill: "rgba(0,0,0,0.5)",
+          cardShadow: "0 12px 36px rgba(0,0,0,0.3)",
+        }}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ThreePillars"
+        component={ThreePillars}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={THREEPILLARS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="SteadyChart"
+        component={SteadyChart}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={STEADYCHART_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="FourWords"
+        component={FourWords}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={FOURWORDS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="StrikeReplace"
+        component={StrikeReplace}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={STRIKEREPLACE_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="LowerThirdQuote"
+        component={LowerThirdQuote}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={LOWERTHIRDQUOTE_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="MissedMoney"
+        component={MissedMoney}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={MISSEDMONEY_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="IndecisionWord"
+        component={IndecisionWord}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={INDECISIONWORD_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="StaircasePortfolio"
+        component={StaircasePortfolio}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={STAIRCASEPORTFOLIO_DURATION_IN_FRAMES}
         calculateMetadata={calculateMetadata}
       />
     </>

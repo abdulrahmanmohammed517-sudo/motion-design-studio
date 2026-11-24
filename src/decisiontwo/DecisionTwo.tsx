@@ -15,16 +15,33 @@ import {
   POP_DURATION,
   POP_SPRING_CONFIG,
   POP_START,
+  SHRINK_END,
+  SHRINK_START,
 } from "./timing";
 
-// No fade-out: this composition hands off directly to DecisionTracker2.
-export const DecisionTwo: React.FC = () => {
+type DecisionTwoProps = {
+  numberText?: string;
+  labelText?: string;
+  pillText?: string;
+  shrinkStart?: number;
+  shrinkEnd?: number;
+};
+
+// No fade-out: this composition hands off directly to a DecisionTracker-
+// style pill. Defaults match the original "02 · YOUR MIX & YOUR NEEDS".
+export const DecisionTwo: React.FC<DecisionTwoProps> = ({
+  numberText = NUMBER_TEXT,
+  labelText = LABEL_TEXT,
+  pillText = PILL_TEXT,
+  shrinkStart = SHRINK_START,
+  shrinkEnd = SHRINK_END,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   const { scale, opacity } = getPopTransform(frame, fps, POP_START, POP_DURATION, POP_SPRING_CONFIG);
-  const box = getCard02Box(frame);
-  const shrinkProgress = getShrinkProgress(frame);
+  const box = getCard02Box(frame, shrinkStart, shrinkEnd);
+  const shrinkProgress = getShrinkProgress(frame, shrinkStart, shrinkEnd);
   const isPill = shrinkProgress > 0;
 
   const bigOpacity = 1 - shrinkProgress;
@@ -63,7 +80,7 @@ export const DecisionTwo: React.FC = () => {
           }}
         >
           <span style={{ fontFamily: montserratFontFamily, fontWeight: 800, fontSize: 70, color: COLOR_GOLD }}>
-            {NUMBER_TEXT}
+            {numberText}
           </span>
           <span
             style={{
@@ -74,7 +91,7 @@ export const DecisionTwo: React.FC = () => {
               textAlign: "center",
             }}
           >
-            {LABEL_TEXT}
+            {labelText}
           </span>
         </div>
         <span
@@ -88,7 +105,7 @@ export const DecisionTwo: React.FC = () => {
             opacity: pillOpacity,
           }}
         >
-          {PILL_TEXT}
+          {pillText}
         </span>
       </GlassCard>
     </AbsoluteFill>

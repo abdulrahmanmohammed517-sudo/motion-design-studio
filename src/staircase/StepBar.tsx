@@ -22,6 +22,7 @@ type StepBarProps = {
   /** 0 -> 1 fade-in strength of the gold glow (lets the light-up ease in). */
   glowOpacity?: number;
   label?: string;
+  drawDuration?: number;
 };
 
 export const StepBar: React.FC<{ frame: number } & StepBarProps> = ({
@@ -31,8 +32,9 @@ export const StepBar: React.FC<{ frame: number } & StepBarProps> = ({
   state = "dim",
   glowOpacity = 0,
   label,
+  drawDuration = DRAW_DURATION,
 }) => {
-  const drawProgress = interpolate(frame, [drawStart, drawStart + DRAW_DURATION], [0, 1], {
+  const drawProgress = interpolate(frame, [drawStart, drawStart + drawDuration], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
