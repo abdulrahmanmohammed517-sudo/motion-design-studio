@@ -10,6 +10,19 @@ import { StartChecklist } from "./checklist/StartChecklist";
 import { StartChecklistMatte } from "./checklist/StartChecklistMatte";
 import { LiveBadge } from "./livebadge/LiveBadge";
 import { LiveBadgeGuide } from "./livebadge/LiveBadgeGuide";
+import { StaircaseStepOne } from "./staircase/StaircaseStepOne";
+import { StaircaseBigLeagues } from "./staircase/StaircaseBigLeagues";
+import { CheckBox } from "./checkbox/CheckBox";
+import { CheckBoxMatte } from "./checkbox/CheckBoxMatte";
+import { CrossBoxes } from "./crossboxes/CrossBoxes";
+import { CrossBoxesMatte } from "./crossboxes/CrossBoxesMatte";
+import { YearsLater } from "./yearslater/YearsLater";
+import { ThreeDecisions } from "./threedecisions/ThreeDecisions";
+import { ThreeDecisionsMatte } from "./threedecisions/ThreeDecisionsMatte";
+import { DecisionTracker } from "./decisiontracker/DecisionTracker";
+import { DecisionTrackerMatte } from "./decisiontracker/DecisionTrackerMatte";
+import { Chips } from "./chips/Chips";
+import { ChipsMatte } from "./chips/ChipsMatte";
 import {
   BOX_PLATE_DURATION_IN_FRAMES,
   DURATION_IN_FRAMES,
@@ -41,6 +54,13 @@ import {
   HEIGHT as LIVEBADGE_HEIGHT,
   WIDTH as LIVEBADGE_WIDTH,
 } from "./livebadge/timing";
+import { DURATION_IN_FRAMES as STAIRCASE_DURATION_IN_FRAMES } from "./staircase/timing";
+import { DURATION_IN_FRAMES as CHECKBOX_DURATION_IN_FRAMES } from "./checkbox/timing";
+import { DURATION_IN_FRAMES as CROSSBOXES_DURATION_IN_FRAMES } from "./crossboxes/timing";
+import { DURATION_IN_FRAMES as YEARSLATER_DURATION_IN_FRAMES } from "./yearslater/timing";
+import { DURATION_IN_FRAMES as THREEDECISIONS_DURATION_IN_FRAMES } from "./threedecisions/timing";
+import { DURATION_IN_FRAMES as DECISIONTRACKER_DURATION_IN_FRAMES } from "./decisiontracker/timing";
+import { DURATION_IN_FRAMES as CHIPS_DURATION_IN_FRAMES } from "./chips/timing";
 
 // Default export settings so both compositions render transparent
 // (ProRes 4444 + alpha) out of the box in Studio, matching the CLI render
@@ -145,6 +165,121 @@ export const RemotionRoot: React.FC = () => {
         height={LIVEBADGE_HEIGHT}
         fps={LIVEBADGE_FPS}
         durationInFrames={LIVEBADGE_DURATION_IN_FRAMES}
+      />
+      <Composition
+        id="StaircaseStepOne"
+        component={StaircaseStepOne}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={STAIRCASE_DURATION_IN_FRAMES}
+      />
+      <Composition
+        id="StaircaseBigLeagues"
+        component={StaircaseBigLeagues}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={STAIRCASE_DURATION_IN_FRAMES}
+      />
+      <Composition
+        id="CheckBox"
+        component={CheckBox}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={CHECKBOX_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="CheckBoxMatte"
+        component={CheckBoxMatte}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={CHECKBOX_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="CrossBoxes"
+        component={CrossBoxes}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={CROSSBOXES_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="CrossBoxesMatte"
+        component={CrossBoxesMatte}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={CROSSBOXES_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="YearsLater"
+        component={YearsLater}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={YEARSLATER_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ThreeDecisions"
+        component={ThreeDecisions}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={THREEDECISIONS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ThreeDecisionsMatte"
+        component={ThreeDecisionsMatte}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={THREEDECISIONS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="DecisionTracker"
+        component={DecisionTracker}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={DECISIONTRACKER_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="DecisionTrackerMatte"
+        component={DecisionTrackerMatte}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={DECISIONTRACKER_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="Chips"
+        component={Chips}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={CHIPS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ChipsMatte"
+        component={ChipsMatte}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={CHIPS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
       />
     </>
   );
