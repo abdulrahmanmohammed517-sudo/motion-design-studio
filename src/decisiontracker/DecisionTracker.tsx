@@ -1,16 +1,36 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { montserratFontFamily } from "../shared/fonts";
 import { GlassCard } from "../shared/GlassCard";
-import { COLOR_GOLD } from "../shared/style";
+import { COLOR_GOLD, GLASS_FILL } from "../shared/style";
 import { getOutProgress } from "../shared/cardTransform";
-import { OUT_END, OUT_START, PILL_HEIGHT, PILL_LEFT, PILL_RADIUS, PILL_TEXT, PILL_TOP, PILL_WIDTH } from "./timing";
+import { OUT_DURATION, PILL_HEIGHT, PILL_LEFT, PILL_RADIUS, PILL_TOP, PILL_WIDTH } from "./timing";
 
-// Just the small top-left tracker pill from the end of ThreeDecisions,
-// held still so it can be extended in Premiere, with a fade-out at the end.
-export const DecisionTracker: React.FC = () => {
+type DecisionTrackerProps = {
+  decisionNumber?: number;
+  totalDecisions?: number;
+  label?: string;
+  cardFill?: string;
+  cardShadow?: string;
+};
+
+// The small top-left tracker pill, held still so it can be extended in
+// Premiere, with a fade-out over the last OUT_DURATION frames of whatever
+// duration this composition is registered with. Defaults match the
+// original ThreeDecisions hand-off (decision 1/3, "WHERE YOUR MONEY LIVES").
+export const DecisionTracker: React.FC<DecisionTrackerProps> = ({
+  decisionNumber = 1,
+  totalDecisions = 3,
+  label = "WHERE YOUR MONEY LIVES",
+  cardFill = GLASS_FILL,
+  cardShadow,
+}) => {
+  const pillText = `DECISION ${decisionNumber}/${totalDecisions} · ${label}`;
+
   const frame = useCurrentFrame();
-  const outProgress = getOutProgress(frame, OUT_START, OUT_END);
+  const { durationInFrames } = useVideoConfig();
+  const outStart = durationInFrames - OUT_DURATION;
+  const outProgress = getOutProgress(frame, outStart, durationInFrames);
   const opacity = 1 - outProgress;
 
   return (
@@ -24,6 +44,8 @@ export const DecisionTracker: React.FC = () => {
           position: "absolute",
           left: PILL_LEFT,
           top: PILL_TOP,
+          backgroundColor: cardFill,
+          boxShadow: cardShadow,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -39,7 +61,7 @@ export const DecisionTracker: React.FC = () => {
             whiteSpace: "nowrap",
           }}
         >
-          {PILL_TEXT}
+          {pillText}
         </span>
       </GlassCard>
     </AbsoluteFill>

@@ -143,6 +143,7 @@ export const ThreeDecisions: React.FC = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              overflow: "hidden",
               scale: popScale,
               opacity: popOpacity,
             }}

@@ -23,6 +23,11 @@ import { DecisionTracker } from "./decisiontracker/DecisionTracker";
 import { DecisionTrackerMatte } from "./decisiontracker/DecisionTrackerMatte";
 import { Chips } from "./chips/Chips";
 import { ChipsMatte } from "./chips/ChipsMatte";
+import { DecisionTwo } from "./decisiontwo/DecisionTwo";
+import { ScenarioCards } from "./scenariocards/ScenarioCards";
+import { RiskSlider } from "./riskslider/RiskSlider";
+import { MixDonut } from "./mixdonut/MixDonut";
+import { ThreeDonuts } from "./threedonuts/ThreeDonuts";
 import {
   BOX_PLATE_DURATION_IN_FRAMES,
   DURATION_IN_FRAMES,
@@ -59,8 +64,18 @@ import { DURATION_IN_FRAMES as CHECKBOX_DURATION_IN_FRAMES } from "./checkbox/ti
 import { DURATION_IN_FRAMES as CROSSBOXES_DURATION_IN_FRAMES } from "./crossboxes/timing";
 import { DURATION_IN_FRAMES as YEARSLATER_DURATION_IN_FRAMES } from "./yearslater/timing";
 import { DURATION_IN_FRAMES as THREEDECISIONS_DURATION_IN_FRAMES } from "./threedecisions/timing";
-import { DURATION_IN_FRAMES as DECISIONTRACKER_DURATION_IN_FRAMES } from "./decisiontracker/timing";
+import {
+  CARD_FILL_2 as DECISIONTRACKER2_CARD_FILL,
+  CARD_SHADOW_2 as DECISIONTRACKER2_CARD_SHADOW,
+  DURATION_IN_FRAMES as DECISIONTRACKER_DURATION_IN_FRAMES,
+  DURATION_IN_FRAMES_2 as DECISIONTRACKER2_DURATION_IN_FRAMES,
+} from "./decisiontracker/timing";
 import { DURATION_IN_FRAMES as CHIPS_DURATION_IN_FRAMES } from "./chips/timing";
+import { DURATION_IN_FRAMES as DECISIONTWO_DURATION_IN_FRAMES } from "./decisiontwo/timing";
+import { DURATION_IN_FRAMES as SCENARIOCARDS_DURATION_IN_FRAMES } from "./scenariocards/timing";
+import { DURATION_IN_FRAMES as RISKSLIDER_DURATION_IN_FRAMES } from "./riskslider/timing";
+import { DURATION_IN_FRAMES as MIXDONUT_DURATION_IN_FRAMES } from "./mixdonut/timing";
+import { DURATION_IN_FRAMES as THREEDONUTS_DURATION_IN_FRAMES } from "./threedonuts/timing";
 
 // Default export settings so both compositions render transparent
 // (ProRes 4444 + alpha) out of the box in Studio, matching the CLI render
@@ -279,6 +294,66 @@ export const RemotionRoot: React.FC = () => {
         height={HEIGHT}
         fps={FPS}
         durationInFrames={CHIPS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="DecisionTwo"
+        component={DecisionTwo}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={DECISIONTWO_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="DecisionTracker2"
+        component={DecisionTracker}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={DECISIONTRACKER2_DURATION_IN_FRAMES}
+        defaultProps={{
+          decisionNumber: 2,
+          label: "YOUR MIX & YOUR NEEDS",
+          cardFill: DECISIONTRACKER2_CARD_FILL,
+          cardShadow: DECISIONTRACKER2_CARD_SHADOW,
+        }}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ScenarioCards"
+        component={ScenarioCards}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={SCENARIOCARDS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="RiskSlider"
+        component={RiskSlider}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={RISKSLIDER_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="MixDonut"
+        component={MixDonut}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={MIXDONUT_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="ThreeDonuts"
+        component={ThreeDonuts}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={THREEDONUTS_DURATION_IN_FRAMES}
         calculateMetadata={calculateMetadata}
       />
     </>
