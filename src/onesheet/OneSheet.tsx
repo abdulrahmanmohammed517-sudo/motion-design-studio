@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { montserratFontFamily } from "../shared/fonts";
 import { GlassCard } from "../shared/GlassCard";
-import { COLOR_GOLD, COLOR_GREEN } from "../shared/style";
+import { COLOR_GREEN } from "../shared/style";
 import { getOutProgress, getPopTransform } from "../shared/cardTransform";
 import { Sparkline, SheetIcon, TwoArrowsIcon } from "./RowIcons";
 import {

@@ -36,6 +36,12 @@ import { LowerThirdQuote } from "./lowerthirdquote/LowerThirdQuote";
 import { MissedMoney } from "./missedmoney/MissedMoney";
 import { IndecisionWord } from "./indecisionword/IndecisionWord";
 import { StaircasePortfolio } from "./staircaseportfolio/StaircasePortfolio";
+import { OneSheet } from "./onesheet/OneSheet";
+import { OpenOpportunities } from "./openopportunities/OpenOpportunities";
+import { YearsOfErrors } from "./yearsoferrors/YearsOfErrors";
+import { LiveWithExpert } from "./livewithexpert/LiveWithExpert";
+import { AcceleratorReveal } from "./acceleratorreveal/AcceleratorReveal";
+import { AcceleratorRevealAlpha } from "./acceleratorreveal/AcceleratorRevealAlpha";
 import {
   BOX_PLATE_DURATION_IN_FRAMES,
   DURATION_IN_FRAMES,
@@ -92,6 +98,11 @@ import { DURATION_IN_FRAMES as LOWERTHIRDQUOTE_DURATION_IN_FRAMES } from "./lowe
 import { DURATION_IN_FRAMES as MISSEDMONEY_DURATION_IN_FRAMES } from "./missedmoney/timing";
 import { DURATION_IN_FRAMES as INDECISIONWORD_DURATION_IN_FRAMES } from "./indecisionword/timing";
 import { DURATION_IN_FRAMES as STAIRCASEPORTFOLIO_DURATION_IN_FRAMES } from "./staircaseportfolio/timing";
+import { DURATION_IN_FRAMES as ONESHEET_DURATION_IN_FRAMES } from "./onesheet/timing";
+import { DURATION_IN_FRAMES as OPENOPPORTUNITIES_DURATION_IN_FRAMES } from "./openopportunities/timing";
+import { DURATION_IN_FRAMES as YEARSOFERRORS_DURATION_IN_FRAMES } from "./yearsoferrors/timing";
+import { DURATION_IN_FRAMES as LIVEWITHEXPERT_DURATION_IN_FRAMES } from "./livewithexpert/timing";
+import { DURATION_IN_FRAMES as ACCELERATORREVEAL_DURATION_IN_FRAMES } from "./acceleratorreveal/timing";
 
 // Default export settings so both compositions render transparent
 // (ProRes 4444 + alpha) out of the box in Studio, matching the CLI render
@@ -475,6 +486,62 @@ export const RemotionRoot: React.FC = () => {
         height={HEIGHT}
         fps={FPS}
         durationInFrames={STAIRCASEPORTFOLIO_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+
+      {/* --- section5 --- */}
+      <Composition
+        id="OneSheet"
+        component={OneSheet}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={ONESHEET_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="OpenOpportunities"
+        component={OpenOpportunities}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={OPENOPPORTUNITIES_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="YearsOfErrors"
+        component={YearsOfErrors}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={YEARSOFERRORS_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="LiveWithExpert"
+        component={LiveWithExpert}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={LIVEWITHEXPERT_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="AcceleratorReveal"
+        component={AcceleratorReveal}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={ACCELERATORREVEAL_DURATION_IN_FRAMES}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="AcceleratorRevealAlpha"
+        component={AcceleratorRevealAlpha}
+        width={WIDTH}
+        height={HEIGHT}
+        fps={FPS}
+        durationInFrames={ACCELERATORREVEAL_DURATION_IN_FRAMES}
         calculateMetadata={calculateMetadata}
       />
     </>

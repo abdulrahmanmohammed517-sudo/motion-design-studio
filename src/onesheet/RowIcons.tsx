@@ -16,9 +16,11 @@ export const Sparkline: React.FC = () => {
 };
 
 export const TwoArrowsIcon: React.FC = () => (
-  <svg viewBox="0 0 48 28" width={48} height={28} fill="none">
-    <path d="M4 20H30M30 20L22 12M30 20L22 28" stroke="white" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M44 8H18M18 8L26 0M18 8L26 16" stroke="white" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" transform="translate(0,6)" />
+  <svg viewBox="0 0 48 32" width={48} height={32} fill="none">
+    <path d="M4 10H40" stroke="white" strokeWidth={2.2} strokeLinecap="round" />
+    <path d="M32 4L40 10L32 16" stroke="white" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M44 22H8" stroke="white" strokeWidth={2.2} strokeLinecap="round" />
+    <path d="M16 28L8 22L16 16" stroke="white" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </svg>
 );
 
